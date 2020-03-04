@@ -1,0 +1,51 @@
+{
+  "name": "review-apps",
+  "version": "1.0.0",
+  "description": "A helper tool to build Review Apps pipelines.",
+  "author": "Ramon de Paula Marques <ramonpm@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com//review-apps.git",
+  "homepage": "https://github.com//review-apps",
+  "bugs": "https://github.com//review-apps/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "dev": "nodemon",
+    "start": "probot run ./index.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.563.0",
+    "probot": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^24.0.0",
+    "nock": "^11.6.0",
+    "nodemon": "^1.17.2",
+    "smee-client": "^1.0.2",
+    "standard": "^12.0.1"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
